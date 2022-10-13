@@ -10,8 +10,8 @@ const Banner = () => {
             <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
             <p className="py-6">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+              excepturi exercitationem quasi. <br /> In deleniti eaque aut
+              repudiandae et a id nisi.
             </p>
             <button className="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary ">
               Get Started
