@@ -3,6 +3,7 @@ import Service from "./Service";
 import fluoride from "../../assets/images/fluoride.png";
 import cavityFilling from "../../assets/images/fluoride.png";
 import teethWhitening from "../../assets/images/fluoride.png";
+import treatment from "../../assets/images/treatment.png";
 
 const Services = () => {
   const services = [
@@ -40,6 +41,31 @@ const Services = () => {
         {services.map((service) => (
           <Service key={service._id} service={service}></Service>
         ))}
+      </div>
+      <div>
+        <div className="hero min-h-screen ">
+          <div className="hero-content grid lg:grid-cols-2  ">
+            <img src={treatment} className="max-w-sm rounded-lg shadow-2xl" />
+            <div className=" text-center">
+              <h1 className="text-5xl font-bold text-clip overflow-hidden">
+                Exceptional Dental <br /> Care, on Your Terms
+              </h1>
+              <p className="py-6 text-clip text-start ">
+                It is a long established fact that a reader will be distracted{" "}
+                <br />
+                by the readable content of a page when looking <br />
+                at its layout. The point of using Lorem Ipsumis that it <br />
+                has a more-or-less normal distribution of letters,as
+                <br /> opposed to using 'Content here, content
+                <br /> here', making it look like readable English. Many desktop
+                <br /> publishing packages and web page
+              </p>
+              <button className="btn btn-primary bg-gradient-to-r from-secondary to-primary">
+                Get Started
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
