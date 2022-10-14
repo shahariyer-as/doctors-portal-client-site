@@ -1,5 +1,5 @@
 import React from "react";
-import Service from "./Service";
+import Service from "./HomeService";
 import fluoride from "../../assets/images/fluoride.png";
 import cavityFilling from "../../assets/images/fluoride.png";
 import teethWhitening from "../../assets/images/fluoride.png";

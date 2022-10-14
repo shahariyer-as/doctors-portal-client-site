@@ -4,7 +4,7 @@ import Contact from "./Contact";
 import Info from "./Info";
 import Footer from "../Shared/Footer";
 import MakeAppointment from "./MakeAppointment";
-import Services from "./Services";
+import Services from "./HomeServices";
 import Testimonial from "./Testimonial";
 
 function Home() {
