@@ -6,6 +6,7 @@ import {
 import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, GError] = useSignInWithGoogle(auth);
@@ -32,8 +33,8 @@ const Login = () => {
     console.log(data);
     signInWithEmailAndPassword(data.email, data.password);
   };
-  if (gUser) {
-    console.log("user", user);
+  if (gUser || user) {
+    console.log(user);
   }
   return (
     <div className="flex h-screen justify-center items-center">
@@ -112,6 +113,14 @@ const Login = () => {
               value="Login"
             />
           </form>
+          <p>
+            <small>
+              New to Doctors Portal ? &nbsp;
+              <Link className="text-secondary" to="/signup">
+                Crate New Account
+              </Link>
+            </small>
+          </p>
           <div className="divider">OR</div>
           <button
             onClick={() => signInWithGoogle()}
