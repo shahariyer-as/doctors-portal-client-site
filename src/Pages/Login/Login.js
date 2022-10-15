@@ -6,19 +6,25 @@ import {
 import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [signInWithGoogle, gUser, gLoading, GError] = useSignInWithGoogle(auth);
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
+
+  const [signInWithGoogle, gUser, gLoading, GError] = useSignInWithGoogle(auth);
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
   // error message variable dec
   let signInError;
+
   // loading
   if (loading || gLoading) {
     return <Loading />;
@@ -28,14 +34,15 @@ const Login = () => {
       <span className="text-red-500">{error?.message || GError?.message}</span>
     );
   }
+  if (gUser || user) {
+    navigate(from, { replace: true });
+  }
 
   const onSubmit = (data) => {
     console.log(data);
     signInWithEmailAndPassword(data.email, data.password);
   };
-  if (gUser || user) {
-    console.log(user);
-  }
+
   return (
     <div className="flex h-screen justify-center items-center">
       <div className="card w-96 bg-base-100 shadow-xl">
