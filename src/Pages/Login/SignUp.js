@@ -33,8 +33,8 @@ const SignUp = () => {
       <span className="text-red-500">{error?.message || GError?.message}</span>
     );
   }
-  if (gUser || user) {
-    console.log(user);
+  if (token) {
+    navigate("/appointment");
   }
   const onSubmit = async (data) => {
     // console.log(data);
